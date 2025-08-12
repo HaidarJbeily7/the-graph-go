@@ -1,7 +1,7 @@
 package apiform
 
 import (
-	"github.com/stainless-sdks/the-graph-go/packages/param"
+	"github.com/HaidarJbeily7/the-graph-go/packages/param"
 	"mime/multipart"
 	"reflect"
 )

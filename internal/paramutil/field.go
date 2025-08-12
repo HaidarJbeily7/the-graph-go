@@ -1,8 +1,8 @@
 package paramutil
 
 import (
-	"github.com/stainless-sdks/the-graph-go/packages/param"
-	"github.com/stainless-sdks/the-graph-go/packages/respjson"
+	"github.com/HaidarJbeily7/the-graph-go/packages/param"
+	"github.com/HaidarJbeily7/the-graph-go/packages/respjson"
 )
 
 func AddrIfPresent[T comparable](v param.Opt[T]) *T {

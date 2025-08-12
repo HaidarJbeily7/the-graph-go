@@ -18,10 +18,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/stainless-sdks/the-graph-go/internal"
-	"github.com/stainless-sdks/the-graph-go/internal/apierror"
-	"github.com/stainless-sdks/the-graph-go/internal/apiform"
-	"github.com/stainless-sdks/the-graph-go/internal/apiquery"
+	"github.com/HaidarJbeily7/the-graph-go/internal"
+	"github.com/HaidarJbeily7/the-graph-go/internal/apierror"
+	"github.com/HaidarJbeily7/the-graph-go/internal/apiform"
+	"github.com/HaidarJbeily7/the-graph-go/internal/apiquery"
 )
 
 func getDefaultHeaders() map[string]string {

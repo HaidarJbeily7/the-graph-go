@@ -10,9 +10,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stainless-sdks/the-graph-go"
-	"github.com/stainless-sdks/the-graph-go/internal"
-	"github.com/stainless-sdks/the-graph-go/option"
+	"github.com/HaidarJbeily7/the-graph-go"
+	"github.com/HaidarJbeily7/the-graph-go/internal"
+	"github.com/HaidarJbeily7/the-graph-go/option"
 )
 
 type closureTransport struct {

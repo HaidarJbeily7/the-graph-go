@@ -41,7 +41,7 @@ To use a local version of this library from source in another project, edit the 
 directive. This can be done through the CLI with the following:
 
 ```sh
-$ go mod edit -replace github.com/stainless-sdks/the-graph-go=/path/to/the-graph-go
+$ go mod edit -replace github.com/HaidarJbeily7/the-graph-go=/path/to/the-graph-go
 ```
 
 ## Running tests

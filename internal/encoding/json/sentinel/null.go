@@ -1,7 +1,7 @@
 package sentinel
 
 import (
-	"github.com/stainless-sdks/the-graph-go/internal/encoding/json/shims"
+	"github.com/HaidarJbeily7/the-graph-go/internal/encoding/json/shims"
 	"reflect"
 	"sync"
 )

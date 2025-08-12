@@ -3,7 +3,7 @@
 package thegraph
 
 import (
-	"github.com/stainless-sdks/the-graph-go/option"
+	"github.com/HaidarJbeily7/the-graph-go/option"
 )
 
 // NFTItemService contains methods and other services that help with interacting

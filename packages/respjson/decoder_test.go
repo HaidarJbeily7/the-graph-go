@@ -3,8 +3,8 @@ package respjson_test
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/stainless-sdks/the-graph-go/internal/apijson"
-	rj "github.com/stainless-sdks/the-graph-go/packages/respjson"
+	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
+	rj "github.com/HaidarJbeily7/the-graph-go/packages/respjson"
 	"reflect"
 	"testing"
 )
