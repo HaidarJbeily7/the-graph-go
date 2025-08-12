@@ -24,7 +24,7 @@ Or to pin the version:
 <!-- x-release-please-start-version -->
 
 ```sh
-go get -u 'github.com/HaidarJbeily7/the-graph-go@v0.0.1'
+go get -u 'github.com/HaidarJbeily7/the-graph-go@v0.0.2'
 ```
 
 <!-- x-release-please-end -->
