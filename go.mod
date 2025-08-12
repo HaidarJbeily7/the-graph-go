@@ -1,4 +1,4 @@
-module github.com/stainless-sdks/the-graph-go
+module github.com/HaidarJbeily7/the-graph-go
 
 go 1.21
 

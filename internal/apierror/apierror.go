@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"net/http/httputil"
 
-	"github.com/stainless-sdks/the-graph-go/internal/apijson"
-	"github.com/stainless-sdks/the-graph-go/packages/respjson"
+	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
+	"github.com/HaidarJbeily7/the-graph-go/packages/respjson"
 )
 
 // Error represents an error that originates from the API, i.e. when a request is

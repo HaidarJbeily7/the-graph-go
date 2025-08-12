@@ -1,7 +1,7 @@
 package apijson
 
 import (
-	"github.com/stainless-sdks/the-graph-go/packages/respjson"
+	"github.com/HaidarJbeily7/the-graph-go/packages/respjson"
 	"reflect"
 )
 

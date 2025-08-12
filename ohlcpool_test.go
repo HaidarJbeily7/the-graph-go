@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/the-graph-go"
-	"github.com/stainless-sdks/the-graph-go/internal/testutil"
-	"github.com/stainless-sdks/the-graph-go/option"
+	"github.com/HaidarJbeily7/the-graph-go"
+	"github.com/HaidarJbeily7/the-graph-go/internal/testutil"
+	"github.com/HaidarJbeily7/the-graph-go/option"
 )
 
 func TestOhlcPoolGetWithOptionalParams(t *testing.T) {
