@@ -2,7 +2,7 @@ package param_test
 
 import (
 	"encoding/json"
-	"github.com/stainless-sdks/the-graph-go/packages/param"
+	"github.com/HaidarJbeily7/the-graph-go/packages/param"
 	"testing"
 )
 

@@ -3,8 +3,8 @@
 package thegraph
 
 import (
-	"github.com/stainless-sdks/the-graph-go/internal/apierror"
-	"github.com/stainless-sdks/the-graph-go/packages/param"
+	"github.com/HaidarJbeily7/the-graph-go/internal/apierror"
+	"github.com/HaidarJbeily7/the-graph-go/packages/param"
 )
 
 // aliased to make [param.APIUnion] private when embedding

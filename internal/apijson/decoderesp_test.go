@@ -2,8 +2,8 @@ package apijson_test
 
 import (
 	"encoding/json"
-	"github.com/stainless-sdks/the-graph-go/internal/apijson"
-	"github.com/stainless-sdks/the-graph-go/packages/respjson"
+	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
+	"github.com/HaidarJbeily7/the-graph-go/packages/respjson"
 	"testing"
 )
 

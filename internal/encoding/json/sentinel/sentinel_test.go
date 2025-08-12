@@ -1,8 +1,8 @@
 package sentinel_test
 
 import (
-	"github.com/stainless-sdks/the-graph-go/internal/encoding/json/sentinel"
-	"github.com/stainless-sdks/the-graph-go/packages/param"
+	"github.com/HaidarJbeily7/the-graph-go/internal/encoding/json/sentinel"
+	"github.com/HaidarJbeily7/the-graph-go/packages/param"
 	"reflect"
 	"slices"
 	"testing"

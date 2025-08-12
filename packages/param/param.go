@@ -2,7 +2,7 @@ package param
 
 import (
 	"encoding/json"
-	"github.com/stainless-sdks/the-graph-go/internal/encoding/json/sentinel"
+	"github.com/HaidarJbeily7/the-graph-go/internal/encoding/json/sentinel"
 	"reflect"
 )
 

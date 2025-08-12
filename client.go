@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/stainless-sdks/the-graph-go/internal/requestconfig"
-	"github.com/stainless-sdks/the-graph-go/option"
+	"github.com/HaidarJbeily7/the-graph-go/internal/requestconfig"
+	"github.com/HaidarJbeily7/the-graph-go/option"
 )
 
 // Client creates a struct with services and top level methods that help with

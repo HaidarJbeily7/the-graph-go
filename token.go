@@ -10,11 +10,11 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/stainless-sdks/the-graph-go/internal/apijson"
-	"github.com/stainless-sdks/the-graph-go/internal/apiquery"
-	"github.com/stainless-sdks/the-graph-go/internal/requestconfig"
-	"github.com/stainless-sdks/the-graph-go/option"
-	"github.com/stainless-sdks/the-graph-go/packages/respjson"
+	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
+	"github.com/HaidarJbeily7/the-graph-go/internal/apiquery"
+	"github.com/HaidarJbeily7/the-graph-go/internal/requestconfig"
+	"github.com/HaidarJbeily7/the-graph-go/option"
+	"github.com/HaidarJbeily7/the-graph-go/packages/respjson"
 )
 
 // TokenService contains methods and other services that help with interacting with
