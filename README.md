@@ -1,6 +1,10 @@
 # The Graph Go API Library
 
+<!-- x-release-please-start-version -->
+
 <a href="https://pkg.go.dev/github.com/HaidarJbeily7/the-graph-go"><img src="https://pkg.go.dev/badge/github.com/HaidarJbeily7/the-graph-go.svg" alt="Go Reference"></a>
+
+<!-- x-release-please-end -->
 
 The The Graph Go library provides convenient access to the The Graph REST API
 from applications written in Go.
