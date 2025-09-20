@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"slices"
 
 	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
 	"github.com/HaidarJbeily7/the-graph-go/internal/apiquery"
@@ -39,7 +40,7 @@ func NewNFTOwnershipService(opts ...option.RequestOption) (r NFTOwnershipService
 // Returns NFT tokens owned by a wallet address with metadata and ownership
 // information.
 func (r *NFTOwnershipService) GetByAddress(ctx context.Context, address string, query NFTOwnershipGetByAddressParams, opts ...option.RequestOption) (res *NFTOwnershipGetByAddressResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	if address == "" {
 		err = errors.New("missing required address parameter")
 		return

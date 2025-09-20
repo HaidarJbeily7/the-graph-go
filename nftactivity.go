@@ -6,6 +6,7 @@ import (
 	"context"
 	"net/http"
 	"net/url"
+	"slices"
 
 	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
 	"github.com/HaidarJbeily7/the-graph-go/internal/apiquery"
@@ -36,7 +37,7 @@ func NewNFTActivityService(opts ...option.RequestOption) (r NFTActivityService) 
 
 // Returns NFT transfer events including mints, burns, and ownership changes.
 func (r *NFTActivityService) List(ctx context.Context, query NFTActivityListParams, opts ...option.RequestOption) (res *NFTActivityListResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	path := "nft/activities/evm"
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, query, &res, opts...)
 	return

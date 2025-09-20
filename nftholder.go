@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"slices"
 
 	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
 	"github.com/HaidarJbeily7/the-graph-go/internal/apiquery"
@@ -38,7 +39,7 @@ func NewNFTHolderService(opts ...option.RequestOption) (r NFTHolderService) {
 // Returns wallet addresses holding NFT collection tokens with quantity and
 // percentage distribution.
 func (r *NFTHolderService) GetByContract(ctx context.Context, contract string, query NFTHolderGetByContractParams, opts ...option.RequestOption) (res *NFTHolderGetByContractResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	if contract == "" {
 		err = errors.New("missing required contract parameter")
 		return

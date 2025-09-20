@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"slices"
 	"time"
 
 	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
@@ -38,7 +39,7 @@ func NewTokenService(opts ...option.RequestOption) (r TokenService) {
 
 // Returns ERC-20 token metadata including supply, holder count, and price data.
 func (r *TokenService) GetMetadata(ctx context.Context, contract string, query TokenGetMetadataParams, opts ...option.RequestOption) (res *TokenGetMetadataResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	if contract == "" {
 		err = errors.New("missing required contract parameter")
 		return

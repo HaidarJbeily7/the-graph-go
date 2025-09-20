@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"slices"
 
 	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
 	"github.com/HaidarJbeily7/the-graph-go/internal/apiquery"
@@ -37,7 +38,7 @@ func NewNFTItemEvmContractService(opts ...option.RequestOption) (r NFTItemEvmCon
 
 // Returns NFT token metadata, attributes, current owner, and media URIs.
 func (r *NFTItemEvmContractService) GetByToken(ctx context.Context, tokenID string, params NFTItemEvmContractGetByTokenParams, opts ...option.RequestOption) (res *NFTItemEvmContractGetByTokenResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	if params.Contract == "" {
 		err = errors.New("missing required contract parameter")
 		return

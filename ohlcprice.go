@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"slices"
 	"time"
 
 	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
@@ -40,7 +41,7 @@ func NewOhlcPriceService(opts ...option.RequestOption) (r OhlcPriceService) {
 // Returns candlestick price data for tokens aggregated across the top 20 trading
 // pairs.
 func (r *OhlcPriceService) Get(ctx context.Context, contract string, query OhlcPriceGetParams, opts ...option.RequestOption) (res *OhlcPriceGetResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	if contract == "" {
 		err = errors.New("missing required contract parameter")
 		return
