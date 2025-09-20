@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"slices"
 	"time"
 
 	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
@@ -39,7 +40,7 @@ func NewOhlcPoolService(opts ...option.RequestOption) (r OhlcPoolService) {
 
 // Returns candlestick price data for liquidity pools across time intervals.
 func (r *OhlcPoolService) Get(ctx context.Context, pool string, query OhlcPoolGetParams, opts ...option.RequestOption) (res *OhlcPoolGetResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	if pool == "" {
 		err = errors.New("missing required pool parameter")
 		return

@@ -6,6 +6,7 @@ import (
 	"context"
 	"net/http"
 	"net/url"
+	"slices"
 	"time"
 
 	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
@@ -37,7 +38,7 @@ func NewHealthService(opts ...option.RequestOption) (r HealthService) {
 // Returns API operational status and dependency health. Use `skip_endpoints=true`
 // for faster database-only checks.
 func (r *HealthService) Check(ctx context.Context, query HealthCheckParams, opts ...option.RequestOption) (res *HealthCheckResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	path := "health"
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, query, &res, opts...)
 	return

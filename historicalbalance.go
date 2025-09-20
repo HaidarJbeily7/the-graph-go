@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"slices"
 	"time"
 
 	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
@@ -39,7 +40,7 @@ func NewHistoricalBalanceService(opts ...option.RequestOption) (r HistoricalBala
 
 // Returns wallet token balance changes over time in OHLC format.
 func (r *HistoricalBalanceService) Get(ctx context.Context, address string, query HistoricalBalanceGetParams, opts ...option.RequestOption) (res *HistoricalBalanceGetResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	if address == "" {
 		err = errors.New("missing required address parameter")
 		return

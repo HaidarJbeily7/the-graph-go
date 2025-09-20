@@ -6,6 +6,7 @@ import (
 	"context"
 	"net/http"
 	"net/url"
+	"slices"
 	"time"
 
 	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
@@ -38,7 +39,7 @@ func NewSwapService(opts ...option.RequestOption) (r SwapService) {
 // Returns DEX swap transactions from Uniswap protocols with token amounts and
 // prices.
 func (r *SwapService) GetEvm(ctx context.Context, query SwapGetEvmParams, opts ...option.RequestOption) (res *SwapGetEvmResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	path := "swaps/evm"
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, query, &res, opts...)
 	return
@@ -46,7 +47,7 @@ func (r *SwapService) GetEvm(ctx context.Context, query SwapGetEvmParams, opts .
 
 // Returns AMM swap events from Solana DEXs with input/output tokens and amounts.
 func (r *SwapService) GetSvm(ctx context.Context, query SwapGetSvmParams, opts ...option.RequestOption) (res *SwapGetSvmResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	path := "swaps/svm"
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, query, &res, opts...)
 	return
