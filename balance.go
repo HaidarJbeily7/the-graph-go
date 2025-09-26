@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"slices"
 
 	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
 	"github.com/HaidarJbeily7/the-graph-go/internal/apiquery"
@@ -38,7 +39,7 @@ func NewBalanceService(opts ...option.RequestOption) (r BalanceService) {
 
 // Returns SPL token balances for Solana token accounts with mint and program data.
 func (r *BalanceService) ListSvm(ctx context.Context, query BalanceListSvmParams, opts ...option.RequestOption) (res *BalanceListSvmResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	path := "balances/svm"
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, query, &res, opts...)
 	return
@@ -46,7 +47,7 @@ func (r *BalanceService) ListSvm(ctx context.Context, query BalanceListSvmParams
 
 // Returns ERC-20 and native token balances for a wallet address with USD values.
 func (r *BalanceService) GetEvm(ctx context.Context, address string, query BalanceGetEvmParams, opts ...option.RequestOption) (res *BalanceGetEvmResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	if address == "" {
 		err = errors.New("missing required address parameter")
 		return

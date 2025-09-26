@@ -6,6 +6,7 @@ import (
 	"context"
 	"net/http"
 	"net/url"
+	"slices"
 	"time"
 
 	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
@@ -37,7 +38,7 @@ func NewTransferService(opts ...option.RequestOption) (r TransferService) {
 
 // Returns ERC-20 and native token transfers with transaction and block data.
 func (r *TransferService) ListEvm(ctx context.Context, query TransferListEvmParams, opts ...option.RequestOption) (res *TransferListEvmResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	path := "transfers/evm"
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, query, &res, opts...)
 	return
@@ -45,7 +46,7 @@ func (r *TransferService) ListEvm(ctx context.Context, query TransferListEvmPara
 
 // Returns SPL token transfers with program, authority, and account information.
 func (r *TransferService) ListSvm(ctx context.Context, query TransferListSvmParams, opts ...option.RequestOption) (res *TransferListSvmResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	path := "transfers/svm"
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, query, &res, opts...)
 	return

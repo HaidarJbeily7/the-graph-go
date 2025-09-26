@@ -5,6 +5,7 @@ package thegraph
 import (
 	"context"
 	"net/http"
+	"slices"
 
 	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
 	"github.com/HaidarJbeily7/the-graph-go/internal/requestconfig"
@@ -33,7 +34,7 @@ func NewVersionService(opts ...option.RequestOption) (r VersionService) {
 
 // Returns API version, build date, and commit information.
 func (r *VersionService) Get(ctx context.Context, opts ...option.RequestOption) (res *VersionGetResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	path := "version"
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, nil, &res, opts...)
 	return

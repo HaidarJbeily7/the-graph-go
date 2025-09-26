@@ -6,6 +6,7 @@ import (
 	"context"
 	"net/http"
 	"net/url"
+	"slices"
 
 	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
 	"github.com/HaidarJbeily7/the-graph-go/internal/apiquery"
@@ -36,7 +37,7 @@ func NewNFTSaleService(opts ...option.RequestOption) (r NFTSaleService) {
 
 // Returns NFT marketplace sales with price, buyer, seller, and transaction data.
 func (r *NFTSaleService) List(ctx context.Context, query NFTSaleListParams, opts ...option.RequestOption) (res *NFTSaleListResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	path := "nft/sales/evm"
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, query, &res, opts...)
 	return

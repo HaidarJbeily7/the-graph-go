@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"slices"
 
 	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
 	"github.com/HaidarJbeily7/the-graph-go/internal/apiquery"
@@ -38,7 +39,7 @@ func NewHolderService(opts ...option.RequestOption) (r HolderService) {
 
 // Returns token holders ranked by balance with holdings and supply percentage.
 func (r *HolderService) GetByContract(ctx context.Context, contract string, query HolderGetByContractParams, opts ...option.RequestOption) (res *HolderGetByContractResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	if contract == "" {
 		err = errors.New("missing required contract parameter")
 		return

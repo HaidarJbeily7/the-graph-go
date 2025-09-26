@@ -5,6 +5,7 @@ package thegraph
 import (
 	"context"
 	"net/http"
+	"slices"
 
 	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
 	"github.com/HaidarJbeily7/the-graph-go/internal/requestconfig"
@@ -33,7 +34,7 @@ func NewNetworkService(opts ...option.RequestOption) (r NetworkService) {
 
 // Returns supported blockchain networks with identifiers and metadata.
 func (r *NetworkService) List(ctx context.Context, opts ...option.RequestOption) (res *NetworkListResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	path := "networks"
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, nil, &res, opts...)
 	return

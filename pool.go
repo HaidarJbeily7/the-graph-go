@@ -6,6 +6,7 @@ import (
 	"context"
 	"net/http"
 	"net/url"
+	"slices"
 	"time"
 
 	"github.com/HaidarJbeily7/the-graph-go/internal/apijson"
@@ -38,7 +39,7 @@ func NewPoolService(opts ...option.RequestOption) (r PoolService) {
 // Returns Uniswap liquidity pool metadata including token pairs, fees, and
 // protocol versions.
 func (r *PoolService) Get(ctx context.Context, query PoolGetParams, opts ...option.RequestOption) (res *PoolGetResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	path := "pools/evm"
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, query, &res, opts...)
 	return
